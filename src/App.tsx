@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-
+import './App.css';
+import {Sidebar, Home,Suggestions} from './Components/index';
+import { Box } from '@mui/material';
 
 function App() {
 
   return (
-    <div className="App">
-      Social PLatform
-    </div>
+    <Box className="flex">
+      <Sidebar />
+      <Home />
+      <Suggestions />
+    </Box>
   )
 }
 
