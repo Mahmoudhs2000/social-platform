@@ -12,15 +12,16 @@ type ItemType = {
     label: string,
     icon: ReactElement,
     divideAfter?: Boolean 
-}
+};
+type ListType = {showNav: Boolean};
 
 const NavList : ItemType[] = [
-    {label: 'Home', icon: <OtherHousesIcon /> },
-    {label: 'Explore', icon: <ExploreIcon /> , divideAfter: true},
-    {label: 'Store', icon: <StoreIcon /> },
-    {label: 'Balance', icon: <AccountBalanceWalletIcon /> ,divideAfter: true},
-    {label: 'Bookmarks', icon: <BookmarksIcon /> },
-    {label: 'Subscriptions', icon: <GroupIcon /> },
+    {label: 'Home', icon: <OtherHousesIcon  style={{color: '#9b9fa2'}} /> },
+    {label: 'Explore', icon: <ExploreIcon  style={{color: '#9b9fa2'}} /> , divideAfter: true},
+    {label: 'Store', icon: <StoreIcon  style={{color: '#9b9fa2'}} /> },
+    {label: 'Balance', icon: <AccountBalanceWalletIcon  style={{color: '#9b9fa2'}} /> ,divideAfter: true},
+    {label: 'Bookmarks', icon: <BookmarksIcon  style={{color: '#9b9fa2'}} /> },
+    {label: 'Subscriptions', icon: <GroupIcon  style={{color: '#9b9fa2'}} /> },
 ];
 
 const ListItem = ({label, icon, divideAfter}: ItemType) : ReactElement=> {
@@ -36,11 +37,11 @@ const ListItem = ({label, icon, divideAfter}: ItemType) : ReactElement=> {
        </>
 }
 
-const SideList = () => {
+const SideList = ({showNav} : ListType) => {
 
     return <Box className='mt-16' >
          {
-          NavList.map((item: ItemType) => <ListItem divideAfter={item.divideAfter} label={item.label} icon={item.icon} />)
+          NavList.map((item: ItemType, k : number) => <ListItem key={k} divideAfter={item.divideAfter} label={showNav ?item.label:''} icon={item.icon} />)
          }
     </Box>
 };
