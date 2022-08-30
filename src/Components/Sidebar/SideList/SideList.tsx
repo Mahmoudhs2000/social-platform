@@ -7,6 +7,7 @@ import BookmarksIcon from '@mui/icons-material/Bookmarks';
 import GroupIcon from '@mui/icons-material/Group';
 
 import { ReactElement } from 'react';
+import ProfileDropdown from '../ProfileDropdown/ProfileDropdown';
 
 type ItemType = {
     label: string,
@@ -16,7 +17,7 @@ type ItemType = {
 type ListType = {showNav: Boolean};
 
 const NavList : ItemType[] = [
-    {label: 'Home', icon: <OtherHousesIcon  style={{color: '#9b9fa2'}} /> },
+    {label: 'Home', icon: <OtherHousesIcon  style={{color: 'black'}} /> },
     {label: 'Explore', icon: <ExploreIcon  style={{color: '#9b9fa2'}} /> , divideAfter: true},
     {label: 'Store', icon: <StoreIcon  style={{color: '#9b9fa2'}} /> },
     {label: 'Balance', icon: <AccountBalanceWalletIcon  style={{color: '#9b9fa2'}} /> ,divideAfter: true},
@@ -27,9 +28,9 @@ const NavList : ItemType[] = [
 const ListItem = ({label, icon, divideAfter}: ItemType) : ReactElement=> {
 
     return<>
-            <div className='my-3 py-3 px-1 rounded-3xl flex place-items-center cursor-pointer hover:bg-[#f5f5f5]' >
+            <div className={`my-3 py-3 px-1 rounded-3xl  flex place-items-center cursor-pointer hover:bg-[#f5f5f5]`} >
                 {icon}
-                <Typography variant='h6' className='relative left-4' > {label}</Typography>
+                <Typography variant='body1' className={`relative left-4`}  style={{fontWeight: label === 'Home' ? 'bold':''}} > {label}</Typography>
             </div>
             {
                 divideAfter ? <hr/>: null
@@ -39,7 +40,8 @@ const ListItem = ({label, icon, divideAfter}: ItemType) : ReactElement=> {
 
 const SideList = ({showNav} : ListType) => {
 
-    return <Box className='mt-16' >
+    return <Box className='mt-6' >
+        <ProfileDropdown showNav={showNav} />
          {
           NavList.map((item: ItemType, k : number) => <ListItem key={k} divideAfter={item.divideAfter} label={showNav ?item.label:''} icon={item.icon} />)
          }

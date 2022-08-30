@@ -17,7 +17,6 @@ const Sidebar = () => {
                 </Box>
             </Box>
             <Box className='mx-[30px] px-1' >
-                <ProfileDropdown showNav={showNav} />
                 <SideList showNav={showNav} />
             </Box>
     </Box>;
