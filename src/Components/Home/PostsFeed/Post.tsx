@@ -46,7 +46,7 @@ const handleClose = () => {
 }
 
  return (
-    <Card className='mb-9' >
+    <Card className='mb-9 bg-black' >
         <Modal
         open={open}
         onClose={handleClose}
@@ -80,7 +80,7 @@ const handleClose = () => {
       </CardContent>
       <CardContent className='flex' >
         {
-            media?.map((img, k) => <img onClick={() => {handleOpen(img)}} className='w-[50%]' src={img} key={k} alt={`post${k}`}  />)
+            media?.map((img, k) => <img onClick={() => {handleOpen(img)}} className='w-full' src={img} key={k} alt={`post${k}`}  />)
         }
       </CardContent>
       <CardActions disableSpacing>

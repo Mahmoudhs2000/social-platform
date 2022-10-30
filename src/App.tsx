@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 function App() {
 
   return (
-    <Box className="flex">
+    <Box className="flex bg-black">
       <Sidebar />
       <Home />
       <Suggestions />

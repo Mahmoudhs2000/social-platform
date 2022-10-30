@@ -18,10 +18,11 @@
   background: transparent !important;
   color: #1a1a1a;
 }
-
+*{
+  font-family: 'Barlow Semi Condensed', sans-serif !important;
+}
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   font-weight: 400;
 
@@ -54,6 +55,10 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+#l-item:hover *{
+  color: black !important;
 }
 
 button {
